@@ -1,0 +1,1379 @@
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 12px; /* Set the width of the scrollbar */
+    height: 12px; /* Set the height for horizontal scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #e82929, #f34747); /* Gradient from top to bottom */
+    border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+    transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #f34747, #e82929); /* Inverse gradient effect when hovered */
+}
+
+::-webkit-scrollbar-track {
+    background: #1b1a1b; /* Dark background for the scrollbar track */
+    border-radius: 10px; /* Rounded corners for the scrollbar track */
+}
+
+::-webkit-scrollbar-corner {
+    background: #1b1a1b; /* Dark background for the corner (intersection of horizontal and vertical scrollbars) */
+}
+
+
+/* General styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #131313;
+    color: #ffffff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    position: fixed; /* Make header stay at the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure the header is above other content */
+    background-color: #131313; /* Ensures header has a background */
+    
+    /* Add subtle shadow effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.project-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Navigation menu */
+.menu {
+    display: flex;
+    gap: 40px;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #262727; /* Unhovered color */
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: #e82929;
+}
+
+/* Download button */
+.download-btn {
+    font-family: 'Inter', sans-serif;  /* Set font to Inter */
+    background-color: #e82929;
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 25px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #c71f1f;
+}
+
+/* Hero section */
+.hero {
+    text-align: center;
+}
+
+.hero-image {
+    margin-top: 60px; /* Spacing between buttons and image */
+}
+
+.hero-image img {
+    width: 70%; /* Increase image width to cover more space */
+    max-width: 900px; /* Increase max width to make it bigger */
+    border-radius: 20px; /* Rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.hero-image img:hover {
+    transform: scale(1.08); /* Increase zoom effect */
+    box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.6); /* Stronger glow effect */
+}
+
+
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 800;
+    color: transparent; /* Make text color transparent to show the gradient */
+    background: linear-gradient(to right, #ff9595 40%, #e82929 60%); /* Faster gradient transition */
+    -webkit-background-clip: text; /* Ensures the gradient applies to the text */
+    background-clip: text; /* Ensures the gradient applies to the text */
+    margin-bottom: 10px;
+}
+
+
+
+.hero-title-white {
+    display: block; /* Ensures it starts on a new line */
+    font-size: 4rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #a0a0a0;
+    margin-bottom: 40px;
+}
+
+/* Hero buttons */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.features {
+    display: flex;
+    flex-direction: column;  /* Stack elements vertically */
+    align-items: center;     /* Center the elements horizontally */
+    margin-top: 140px; 
+}
+
+.features-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: white; /* Make the text color white by default */
+    text-align: center;
+    margin-bottom: 50px;
+    text-transform: capitalize;
+}
+
+.features-title .gradient-text {
+    color: transparent; /* Make the text color transparent */
+    background: linear-gradient(to right, #ff9595, #e82929); /* Gradient from dark to light */
+    -webkit-background-clip: text; /* Ensures the gradient applies to the text */
+    background-clip: text;
+}
+
+
+
+.features-container {
+    display: flex;
+    justify-content: center; /* Centers the feature boxes */
+    flex-wrap: wrap; /* Allow responsiveness for smaller screens */
+    gap: 20px; /* Adds spacing between the boxes */
+}
+
+.feature-box {
+    background-color: #1b1a1b; 
+    border: 2px solid #262727; 
+    border-radius: 15px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+    padding: 20px 15px; 
+    margin-bottom: 80px; 
+    flex: 1; 
+    min-width: 250px; 
+    max-width: 320px; 
+    text-align: left; 
+    display: flex; 
+    align-items: center; 
+    transition: transform 0.3s ease-in-out;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px); /* Adds a hover effect */
+}
+
+.feature-box i {
+    font-size: 2rem; 
+    color: white; 
+    margin-right: 15px; 
+    margin-left: 10px; 
+}
+
+.feature-text {
+    display: flex; 
+    flex-direction: column; 
+}
+
+.feature-text h3 {
+    margin: 0 0 5px; 
+    font-size: 1.2rem; 
+    color: transparent; 
+    font-weight: 700; 
+    background: linear-gradient(to right, #ff9595, #e82929); /* Gradient from dark to light */
+    background-clip: text; 
+    -webkit-background-clip: text; 
+}
+
+.feature-text p {
+    margin: 0; 
+    color: white; 
+    font-weight: 400; 
+    font-size: 1rem; 
+}
+
+/* Additional Content Section */
+.additional-content {
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: flex-start; /* Align items to the top */
+    margin-top: 20px;
+    width: 100%;
+    max-width: 1200px; /* Limit the maximum width */
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 150px; /* Adjust padding for better visual appearance */
+
+}
+
+
+/* Left Section - Library Image */
+.left-section img {
+    margin-top: 100px;
+    width: 100%;
+    max-width: 700px; /* Increased image size */
+    border-radius: 15px; /* Ensures rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* More rounded shadow effect */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* More rounded shadow effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect */
+.left-section img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5); /* Rounded shadow effect */
+}
+
+/* Right Section - Text and Details */
+.right-section {
+    flex: 1;
+    margin-left: 40px;
+    text-align: left;
+}
+
+.right-section h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.right-section .gradient-text {
+    color: transparent; /* Make the text color transparent */
+    background: linear-gradient(to right, #ff9595, #e82929); /* Gradient from dark to light */
+    -webkit-background-clip: text; /* Ensures the gradient applies to the text */
+    background-clip: text;
+}
+
+.right-section p {
+    font-size: 1rem;
+    color: #bbb;
+    margin-bottom: 30px;
+}
+
+/* Feature Details Section */
+.feature-details {
+    display: flex;
+    flex-direction: column; /* Stack sections vertically */
+    gap: 30px; /* Space between sections */
+}
+
+.detail {
+    display: flex;
+    align-items: center;  /* Align items vertically */
+    gap: 15px;  /* Space between icon and text */
+}
+
+.detail i {
+    font-size: 2rem;
+    color: #e82929;
+    min-width: 50px;  /* Ensures consistent spacing */
+    text-align: center;
+}
+
+.detail-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* Align text within container */
+}
+
+.detail-content h4 {
+    font-size: 1.2rem;
+    color: white;
+    margin: 0;  /* Remove margin for better alignment */
+}
+
+.detail-content p {
+    font-size: 0.9rem;
+    color: #bbb;
+    margin: 5px 0 0 0;  /* Adjust top margin to bring it closer */
+}
+
+
+.btn {
+    font-family: 'Inter', sans-serif;  /* Set font to Inter */
+    border: none;
+    border-radius: 50px;
+    padding: 15px 50px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.primary-btn {
+    background-color: #e62828;
+    color: #ffffff;
+}
+
+.primary-btn:hover {
+    background-color: #1f41c7;
+    transform: scale(1.1); /* Add pop-up animation by scaling the button */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.secondary-btn {
+    background-color: #1b1a1b; /* Dark background color */
+    color: #ffffff; /* White text color */
+    outline: 2px solid #262727; /* Outline with the specified color */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.secondary-btn:hover {
+    background-color: #e62828;
+    outline: 2px solid #e62828; /* Outline with the specified color */
+    color: #ffffff;
+    transform: scale(1.1); /* Add pop-up animation by scaling the button */
+}
+
+
+/* Container styles (Grid and fading effect) */
+.container {
+    text-align: center;
+    padding-top: 200px; /* Adjust padding for better visual appearance */
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1920px;
+    height: 700px;
+    margin: 0 auto;
+}
+
+/* Square grid texture with fading effect at the top */
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(90deg, rgba(38, 39, 39, 0.5) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(38, 39, 39, 0.5) 1px, transparent 1px);
+    background-size: 65px 65px;
+    z-index: -1;
+    
+    /* Apply radial gradient mask to fade away */
+    mask-image: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 99%);
+    mask-size: 100%;
+}
+
+/* About Wrapper to center content and title */
+.about-wrapper {
+    text-align: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto; /* Centers everything */
+}
+
+/* About Title Styling */
+.about-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: white; /* Default text color */
+    text-align: center;
+    margin-bottom: 50px;
+    text-transform: capitalize;
+}
+
+/* Gradient effect only on 'About' word */
+.about-title .gradient-text {
+    color: transparent;
+    background: linear-gradient(to right, #ff9595, #e82929);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+/* About Section Styling */
+.about, .ogfortnite {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 20px;
+    color: white;
+    max-width: 1200px;
+    margin: 50px auto;
+    background-color: transparent;
+}
+
+/* Image Styles */
+.about-image, .ogfortnite-image {
+    width: 550px; /* Increased size */
+    height: auto;
+    border-radius: 15px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Image Hover Effects */
+.about-image:hover, .ogfortnite-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5); /* Rounded shadow effect */
+}
+
+/* Text Alignment */
+.about-text, .ogfortnite-text {
+    text-align: left;
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Headings */
+.about h2, .ogfortnite h2 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 30px;
+    font-weight: 900;
+}
+
+/* Paragraph Text */
+.about p, .ogfortnite p {
+    font-size: 1.2rem;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    color: #818080;
+    font-weight: 400;
+    font-family: Poppins, sans-serif;
+}
+
+/* Reverse flex order for second section */
+.ogfortnite {
+    flex-direction: row-reverse;
+}
+
+/* Adjust space between image and text */
+.about-image {
+    margin-right: 40px;
+}
+
+.ogfortnite-image {
+    margin-left: 40px;
+}
+
+
+/* FAQ Section */
+.faq-section {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.faq-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: white;
+    text-align: center;
+    margin-bottom: 50px;
+    text-transform: capitalize;
+}
+
+.faq-title .gradient-text {
+    color: transparent;
+    background: linear-gradient(to right, #e82929, #ff9595);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+/* FAQ Wrapper */
+.faq-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* FAQ Items */
+.faq-item {
+    background-color: #1b1a1b; 
+    border: 2px solid #262727; 
+    border-radius: 10px;
+    padding: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* FAQ Question */
+.faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.faq-question h3 {
+    font-size: 1.5rem;
+    color: white;
+    margin-left: 15px;
+    flex: 1;
+    text-align: left;
+}
+
+.faq-question i {
+    font-size: 1.8rem;
+    color: #ff9595;
+}
+
+/* FAQ Answer */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    text-align: left;
+    color: #bbb;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+/* When active, expand answer */
+.faq-item.active .faq-answer {
+    max-height: 200px;
+    opacity: 1;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(180deg);
+}
+
+/* Footer Section */
+footer {
+    background-color: #1b1a1b; /* Dark background color */
+    color: white;
+    padding: 20px 0;
+    width: 100%; /* Make the footer span the entire width of the page */
+    margin-top: 50px;
+}
+
+/* Footer Content */
+.footer-content {
+    display: flex;
+    justify-content: space-between; /* Distribute logo, menu, and social icons evenly */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+/* Logo and Text */
+.footer-logo {
+    display: flex;
+    align-items: center; /* Align logo and text in a row */
+    gap: 10px; /* Space between logo and text */
+}
+
+.footer-logo-img {
+    width: 50px; /* Adjust the size of the logo */
+    height: auto;
+}
+
+.footer-logo h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ff9595;
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+/* Navigation Menu */
+.menu {
+    display: flex;
+    gap: 30px; /* Space between navigation links */
+}
+
+.menu a {
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.menu a:hover {
+    color: #ff9595;
+    transform: translateY(-5px);
+}
+
+/* Social Media Icons */
+.socials {
+    display: flex;
+    gap: 20px; /* Space between social icons */
+}
+
+.social-icon {
+    font-size: 2rem;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #ff9595;
+    transform: scale(1.1);
+}
+
+.social-icon i {
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover i {
+    transform: rotate(360deg);
+}
+
+/* Domain Name Section */
+.footer-domain {
+    text-align: center;
+    margin-left: 60px;
+    margin-bottom: 20px;
+
+}
+
+.footer-domain p {
+    font-size: 1rem;
+    color: white;
+    margin: 0;
+}
+
+.footer-domain a {
+    color: #ff9595;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-domain a:hover {
+    text-decoration: underline;
+}
+
+/* New Footer Flex Layout */
+.footer-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Fix Layout to Center the Navigation and Domain Text */
+.footer-wrapper .footer-content {
+    display: flex;
+    justify-content: center; /* Center all items horizontally */
+    gap: 50px; /* Ensure space between elements */
+}
+
+/* Header styles for small screens */
+@media only screen and (max-width: 480px) {
+
+    /* General styles */
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background-color: #0d111b;
+        color: #ffffff;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        min-height: 100vh;
+        width: 100%; /* Ensure body width is 100% of the viewport */
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+    
+    /* Prevent child elements from overflowing */
+    * {
+        box-sizing: border-box; /* Ensures padding and border don't cause overflow */
+        margin: 0;
+        padding: 0;
+    }
+    
+    html, body {
+        width: 100%; /* Ensure the body takes full width */
+        height: 100%; /* Ensure the height is full */
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+    
+    
+    
+        header {
+            flex-direction: column; /* Stack items vertically */
+            align-items: flex-start; /* Align items to the left */
+            position: fixed; /* Ensure the header stays fixed at the top */
+            top: 0; /* Make sure it touches the top */
+            left: 0;
+            right: 0;
+            z-index: 1000; /* Ensure it's above other content */
+    
+        }
+    
+        ::-webkit-scrollbar {
+            display: none; /* Hide scrollbar */
+        }
+    
+        ::-webkit-scrollbar-thumb {
+            display: none; /* Hide the thumb */
+        }
+    
+        ::-webkit-scrollbar-track {
+            display: none; /* Hide the track */
+        }
+    
+        ::-webkit-scrollbar-corner {
+            display: none; /* Hide the corner */
+        }
+    
+       /* Logo container */
+    .logo {
+        display: flex;
+        justify-content: center; /* Center the logo horizontally */
+        align-items: center; /* Center the logo vertically */
+        margin-bottom: 5px; /* Add minimal space below the logo */
+        width: 100%; /* Ensure the logo container takes up full width */
+    }
+    
+    /* Logo image */
+    .logo img {
+        height: 50px; /* Adjust logo size for smaller screens */
+        display: block; /* Ensure the image behaves like a block element */
+    }
+    
+    
+        .project-title {
+            font-size: 1.3rem; /* Adjust font size */
+            font-weight: 600;
+            margin-left: 10px; /* Add margin to the left */
+        }
+    
+        /* Navigation menu */
+    .menu {
+        display: flex; /* Use flexbox for layout */
+        flex-direction: row; /* Place navigation items in a row */
+        gap: 12px; /* Space between menu items */
+        align-items: center; /* Vertically center the items */
+        font-size: 1rem; /* Adjust font size */
+        font-weight: 300;
+        margin-top: 10px; /* Optional: Add space above the menu */
+    }
+    
+    .menu a {
+        font-size: 1rem; /* Adjust font size of links */
+        padding: 5px 10px; /* Adjust padding */
+        text-decoration: none; /* Ensure links don't have underlines */
+        color: inherit; /* Inherit color from the parent */
+    }
+    
+    
+        /* Download button */
+    .download-btn {
+        font-size: 1rem; /* Reduce font size */
+        padding: 8px 20px; /* Adjust padding */
+        margin-top: 15px; /* Add space above button */
+        margin-left: auto; /* Push button to the right within its container */
+        margin-right: auto; /* Center the button horizontally */
+        display: block; /* Ensure the button behaves like a block element */
+    }
+    
+        /* Hero section */
+    .hero {
+        text-align: center;
+        margin-top: 80px; /* Add top margin to create space between the header and the hero section */
+    }
+    
+    .hero-image {
+        margin-top: 60px; /* Spacing between buttons and image */
+    }
+    
+    .hero-image img {
+        width: 70%; /* Increase image width to cover more space */
+        max-width: 500px; /* Increase max width to make it bigger */
+        border-radius: 5px; /* Rounded corners */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    /* Hover effect */
+    .hero-image img:hover {
+        transform: scale(1.08); /* Increase zoom effect */
+        box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.6); /* Stronger glow effect */
+    }
+    
+    /* Hero Title */
+    .hero-title {
+        font-size: 2.5rem; /* Reduced font size */
+        font-weight: 800;
+        color: transparent; /* Make text color transparent to show the gradient */
+        background: linear-gradient(to right, #ff9595 40%, #e82929 60%); /* Faster gradient transition */
+        -webkit-background-clip: text; /* Ensures the gradient applies to the text */
+        background-clip: text; /* Ensures the gradient applies to the text */
+        margin-bottom: 8px; /* Reduced bottom margin */
+        margin-top: -20px; /* Adjust top margin for balance */
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* Add shadow with slight offset and blur */
+    }
+    
+    /* Hero Title - White variant */
+    .hero-title-white {
+        display: block; /* Ensures it starts on a new line */
+        font-size: 2.5rem; /* Reduced font size */
+        font-weight: 800;
+        color: #ffffff;
+        margin-bottom: 8px; /* Reduced bottom margin */
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* Add shadow with slight offset and blur */
+    }
+    
+    
+    .hero-subtitle {
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: #a0a0a0;
+        margin-bottom: 40px;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Lighter shadow for subtitle */
+    }
+    
+    /* Hero buttons */
+    .hero-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .btn {
+        font-family: 'Inter', sans-serif;  /* Set font to Inter */
+        border: none;
+        border-radius: 8px; /* Slightly smaller border radius */
+        padding: 10px 30px; /* Smaller padding */
+        font-size: 1.2rem; /* Smaller font size */
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .primary-btn {
+        background-color: #e62828;
+        color: #ffffff;
+    }
+    
+    .primary-btn:hover {
+        background-color: #1f41c7;
+        transform: scale(1.1); /* Add pop-up animation by scaling the button */
+        transition: transform 0.3s ease; /* Smooth transition */
+    }
+    
+    .secondary-btn {
+        background-color: #1b1a1b; /* Dark background color */
+        color: #ffffff; /* White text color */
+        outline: 2px solid #262727; /* Outline with the specified color */
+        transition: transform 0.3s ease; /* Smooth transition */
+    }
+    
+    .secondary-btn:hover {
+        background-color: #e62828;
+        outline: 2px solid #e62828; /* Outline with the specified color */
+        color: #ffffff;
+        transform: scale(1.1); /* Add pop-up animation by scaling the button */
+    }
+    
+    .features {
+        display: flex;
+        flex-direction: column;  /* Stack elements vertically */
+        align-items: center;     /* Center the elements horizontally */
+    }
+    
+    .features-title {
+        font-size: 3rem;
+        font-weight: 800;
+        color: white; /* Make the text color white by default */
+        text-align: center;
+        margin-bottom: 50px;
+        text-transform: capitalize;
+        margin-top: -100px;
+    }
+    
+    .features-container {
+        display: flex;
+        justify-content: center; /* Centers the feature boxes */
+        flex-wrap: wrap; /* Allow responsiveness for smaller screens */
+        gap: 20px; /* Adds spacing between the boxes */
+    }
+    
+    .feature-box {
+        background-color: #1b1a1b; 
+        border: 2px solid #262727; 
+        border-radius: 15px; 
+        padding: 20px 15px; 
+        margin-bottom: 20px; 
+        flex: 1; 
+        min-width: 250px; 
+        max-width: 320px; 
+        text-align: center; /* Center text */
+        display: flex; 
+        flex-direction: column; /* Ensure items stack vertically */
+        justify-content: center; /* Center items vertically */
+        align-items: center; /* Center items horizontally */
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+    
+    
+    /* Additional Content Section */
+    .additional-content {
+        display: flex;
+        flex-direction: column; /* Stack the sections vertically */
+        justify-content: center; /* Center content vertically */
+        align-items: center; /* Center content horizontally */
+        margin-top: 250px;
+        width: 100%;
+        max-width: 100%; /* Ensure no horizontal scrolling */
+        padding: 20px;
+        padding-bottom: 150px; /* Adjust padding for better visual appearance */
+        box-sizing: border-box; /* Make sure padding doesn't break the layout */
+        min-height: 100vh; /* Ensure it takes full viewport height, centering the content */
+    }
+    
+    
+    /* Left Section - Library Image */
+    .left-section {
+        width: 100%;
+        display: flex;
+        justify-content: center; /* Center the image horizontally */
+        align-items: center; /* Center the image vertically */
+        margin-bottom: 20px; /* Add space between image and text */
+    }
+    
+    .left-section img {
+        width: 100%; /* Make the image take full width of its container */
+        max-width: 500px; /* Limit the maximum width of the image */
+        height: auto; /* Maintain the aspect ratio */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+    }
+    
+    
+    /* Hover effect */
+    .left-section img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 40px rgba(0, 0, 0, 0.5); /* Stronger shadow effect */
+    }
+    
+    /* Right Section - Text and Details */
+    .right-section {
+        margin-right: 50px;
+        width: 90%;
+        text-align: center; /* Center the text */
+        display: flex;
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center content horizontally */
+        margin-top: 20px;
+        justify-content: center; /* Ensure vertical alignment as well */
+    }
+    
+    .right-section h3 {
+        font-size: 1.5rem; /* Smaller font size */
+        font-weight: 700;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center; /* Align icon and text */
+        justify-content: center;
+        gap: 10px; /* Space between the icon and the text */
+    }
+    
+    .right-section .gradient-text {
+        color: transparent; /* Make the text color transparent */
+        background: linear-gradient(to right, #ff9595, #e82929); /* Gradient from dark to light */
+        -webkit-background-clip: text; /* Ensure the gradient applies to the text */
+        background-clip: text;
+    }
+    
+    .right-section p {
+        font-size: 1rem; /* Smaller text */
+        color: #bbb;
+        margin-bottom: 50px;
+        text-align: center; /* Center the paragraph text */
+    }
+    
+    .feature-box i {
+        font-size: 2rem; 
+        color: white; 
+        margin-right: 15px; 
+        margin-left: 10px; 
+        margin-bottom: 10px
+    }
+    
+    .feature-text {
+        display: flex; 
+        flex-direction: column; 
+    }
+    /* Feature Details Section */
+    .feature-details {
+        display: flex;
+        flex-direction: column; /* Stack sections vertically */
+        gap: 20px; /* Space between sections */
+        align-items: center; /* Center the feature details */
+        width: 100%; /* Prevent horizontal scrolling */
+        text-align: center; /* Center the text */
+    
+    }
+    
+    .detail {
+        display: flex;
+        align-items: center;  /* Align items vertically */
+        margin-bottom: 50px;
+    }
+    
+    .detail i {
+        font-size: 1.5rem; /* Smaller icon size */
+        color: #e82929;
+        min-width: 40px; /* Ensures consistent spacing */
+        text-align: center; /* Center the icon */
+    }
+    
+    .detail-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Align text vertically */
+        text-align: center; /* Center the text */
+        max-width: 70%; /* Ensure text doesn't overflow */
+        align-items: center; /* Center text horizontally */
+    }
+    
+    .detail-content h4 {
+        font-size: 1.2rem; /* Smaller heading */
+        color: white;
+        margin: 0; /* Remove margin for better alignment */
+    }
+    
+    .detail-content p {
+        font-size: 1rem; /* Slightly smaller paragraph text */
+        color: #bbb;
+        margin: 5px 0 0 0; /* Adjust top margin to bring it closer */
+        text-align: center; /* Center the paragraph text */
+    }
+    
+    /* About Wrapper to center content and title */
+    .about-wrapper {
+        text-align: center;
+        padding: 20px;
+        max-width: 100%; /* Allow it to take the full available width */
+        margin: 0 auto; /* Centers everything */
+    }
+    
+    /* About Title Styling */
+    .about-title {
+        font-size: 2rem; /* Slightly smaller title */
+        font-weight: 800;
+        color: white; /* Default text color */
+        text-align: center;
+        margin-bottom: 30px;
+        text-transform: capitalize;
+        margin-top: 150px;
+    }
+    
+    /* Gradient effect only on 'About' word */
+    .about-title .gradient-text {
+        color: transparent;
+        background: linear-gradient(to right, #ff9595, #e82929);
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+    
+    /* About Section Styling */
+    .about, .ogfortnite {
+        display: flex;
+        flex-direction: column; /* Stack content vertically by default */
+        align-items: center; /* Center items */
+        justify-content: center;
+        padding: 20px;
+        color: white;
+        max-width: 100%; /* Ensure no horizontal overflow */
+        margin: 50px auto;
+        background-color: transparent;
+    }
+    
+    /* Image Styles */
+    .about-image, .ogfortnite-image {
+        width: 100%; /* Make images take up full width */
+        height: auto; /* Maintain aspect ratio */
+        max-width: 100%; /* Ensure the image is not too large */
+        border-radius: 15px;
+        flex-shrink: 0;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    /* Image Hover Effects */
+    .about-image:hover, .ogfortnite-image:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 40px rgba(0, 0, 0, 0.5); /* Rounded shadow effect */
+    }
+    
+    /* Text Alignment */
+    .about-text, .ogfortnite-text {
+        text-align: center; /* Center align the text */
+        max-width: 100%; /* Prevent horizontal overflow */
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px; /* Add padding to create space around text */
+    }
+    
+    /* Headings */
+    .about h2, .ogfortnite h2 {
+        font-size: 2.5rem;
+        color: #ffffff;
+        margin-bottom: 20px; /* Decrease margin for better spacing */
+        font-weight: 900;
+    }
+    
+    /* Paragraph Text */
+    .about p, .ogfortnite p {
+        font-size: 1.2rem;
+        margin-top: 10px; /* Add space between paragraphs */
+        margin-bottom: 20px; /* Add more space at the bottom */
+        line-height: 1.6; /* Increased line height for better readability */
+        color: #818080;
+        font-weight: 400;
+        font-family: Poppins, sans-serif;
+        text-align: center; /* Center text within the container */
+        max-width: 100%; /* Ensure text doesn't overflow */
+    }
+    
+    /* Reverse flex order for second section */
+    .ogfortnite {
+        flex-direction: column; /* Stack the items vertically */
+    }
+    
+    /* Adjust space between image and text */
+    .about-image, .ogfortnite-image {
+        display: block; /* Make the images block elements to allow centering */
+        margin-left: auto; /* Center the image horizontally */
+        margin-right: auto; /* Center the image horizontally */
+    }
+    
+    .about-image {
+        margin-bottom: 20px; /* Add space below image */
+    }
+    
+    .ogfortnite-image {
+        margin-top: 20px; /* Add space above image */
+    }
+    
+    .description-text {
+        text-align: center;
+        padding: 40px;
+        max-width: 1200px; /* Adjust width for better layout */
+        margin: 1200px auto; /* Add top margin to push the section further down */
+    }
+    
+    .description-text p {
+        font-size: 1.2rem;
+        margin-top: 20px;  /* Add more space on top */
+        margin-bottom: 20px;  /* Add more space at the bottom */
+        line-height: 1.6;  /* Increased line height for better readability */
+        color: #818080;
+        font-weight: 400;
+        font-family: Poppins, sans-serif;
+        text-align: center;  /* Align text to the center */
+        max-width: 100%;  /* Constrain width of text for clarity */
+        margin-left: auto;
+        margin-right: auto;  /* Center align the text within the block */
+    }
+    
+    /* FAQ Section */
+    .faq-section {
+        max-width: 1000px;
+        margin: 1200px auto 100px; /* Reduced top margin, increased bottom margin */
+        padding: 20px;
+        text-align: center;
+    }
+    
+    /* FAQ Title */
+    .faq-title {
+        font-size: 2.5rem; /* Reduced font size */
+        font-weight: 800;
+        color: white;
+        text-align: center;
+        margin-bottom: 30px; /* Reduced space below the title */
+        text-transform: capitalize;
+    }
+    
+    /* FAQ Wrapper */
+    .faq-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center the FAQ items */
+        gap: 15px;
+    }
+    
+    /* FAQ Items */
+    .faq-item {
+        background-color: #1b1a1b;
+        border: 2px solid #262727;
+        border-radius: 8px; /* Slightly smaller rounded corners */
+        padding: 15px; /* Reduced padding */
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+        font-size: 1.1rem; /* Reduced font size */
+        max-width: 80%;
+    }
+    
+    .faq-item:hover {
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    .faq-item.active {
+        border-color: #e82929;
+        box-shadow: 0 6px 15px rgba(41, 80, 232, 0.6);
+    }
+    
+    /* FAQ Question */
+    .faq-question {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .faq-question h3 {
+        font-size: 1.3rem; /* Reduced font size */
+        color: white;
+        margin-left: 10px; /* Reduced left margin */
+        flex: 1;
+        text-align: left;
+    }
+    
+    .faq-question i {
+        font-size: 1.6rem; /* Reduced icon size */
+        color: #ff9595;
+        transition: transform 0.3s ease, color 0.3s ease;
+    }
+    
+    /* FAQ Answer */
+    .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.4s ease, opacity 0.4s ease;
+        text-align: left;
+        color: #bbb;
+        font-size: 1rem; /* Reduced font size */
+        line-height: 1.6;
+        margin-top: 10px;
+    }
+    
+    /* When active, expand answer */
+    .faq-item.active .faq-answer {
+        max-height: 200px;
+        opacity: 1;
+    }
+    
+     /* Stack content vertically */
+     .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    /* Adjust logo size for mobile */
+    .footer-logo h3 {
+        font-size: 1.5rem;
+    }
+    
+    /* Adjust social icons for mobile */
+    .socials {
+        gap: 15px;
+    }
+    
+    /* Footer menu */
+    .footer-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding-left: 0;
+        font-size: 1rem;
+    }
+    
+    /* Adjust the footer domain text */
+    .footer-domain {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+    
+    .footer-domain p {
+        font-size: 1rem;
+    }
+    
+    .footer-background-image {
+        position: absolute; /* Position the image inside the footer */
+        bottom: 240px; /* Adjust the vertical distance from the bottom of the footer */
+        left: 40px; /* Position the image from the left side */
+        width: auto; /* Keep the image's original width */
+        height: auto; /* Keep the image's original height */
+        max-width: 300px; /* Set a maximum width for the image */
+        z-index: -1; /* Ensure the image stays behind footer content */
+    }
+    
+    .footer-logo-img {
+        width: 50px; /* Adjust the size of the logo */
+        height: auto;
+    }
+    
+    }
