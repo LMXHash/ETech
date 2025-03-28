@@ -86,13 +86,13 @@ header {
 }
 
 .menu a:hover {
-    color: #e82929;
+    color: #e62828;
 }
 
 /* Download button */
 .download-btn {
     font-family: 'Inter', sans-serif;  /* Set font to Inter */
-    background-color: #e82929;
+    background-color: #e62828;
     color: #ffffff;
     border: none;
     border-radius: 50px;
@@ -361,7 +361,7 @@ header {
 }
 
 .primary-btn:hover {
-    background-color: #1f41c7;
+    background-color: #c71f1f;
     transform: scale(1.1); /* Add pop-up animation by scaling the button */
     transition: transform 0.3s ease; /* Smooth transition */
 }
@@ -728,7 +728,7 @@ footer {
     body {
         margin: 0;
         font-family: 'Poppins', sans-serif;
-        background-color: #0d111b;
+        background-color: #131313;
         color: #ffffff;
         text-align: center;
         display: flex;
@@ -912,7 +912,7 @@ footer {
     }
     
     .primary-btn:hover {
-        background-color: #1f41c7;
+        background-color: #c71f1f;
         transform: scale(1.1); /* Add pop-up animation by scaling the button */
         transition: transform 0.3s ease; /* Smooth transition */
     }
